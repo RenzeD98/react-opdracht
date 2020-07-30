@@ -1,0 +1,22 @@
+{
+    "questions": [
+      {
+        "title": "Wat zijn jouw gegevens?",
+        "fields": [
+          { "name": "first_name", "label": "Voornaam", "type": "text" },
+          { "name": "last_name", "label": "Achternaam", "type": "text" },
+          { "name": "email", "label": "E-mail", "type": "text" },
+          { "name": "phone_number", "label": "Telefoonnummer", "type": "text" }
+        ]
+      },
+      {
+        "title": "Waar woon je?",
+        "fields": [
+          { "name": "street_address", "label": "Straatnaam", "type": "text" },
+          { "name": "housenumber", "label": "Huisnummer", "type": "number" },
+          { "name": "post_code", "label": "Postcode", "type": "text" },
+          { "name": "country", "label": "Land", "type": "dropdown", "options": ["Nederland", "Belgie", "Duitsland", "UK"] }
+        ]
+      }
+    ]
+  }
