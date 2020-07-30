@@ -26,7 +26,7 @@ class Field extends React.Component {
         return <option value={item} key={key}>{item}</option>
       });
 
-      field = <select className="form-control" id={this.props.name} onChange={this.handleChange}>{ options }</select>
+      field = <select className="form-control" id={this.props.name} onChange={this.handleChange} name={this.props.name}>{ options }</select>
 
     } else {
 
@@ -97,12 +97,17 @@ class Form extends React.Component {
 
   /**
    * Sets up an empty object in the state with keys from the JSON with the inputfields names
+   * When the inputfield is a dropdown. The default value is the first item in options
    */
   setupEmptyStateInputs() {
     let formValues = {};
     jsonFormData.questions.map((item, key) => {
-      return item.fields.map((item, key) => {
-        return formValues[item.name] = '';
+       item.fields.map((item, key) => {
+        if(item.type === 'dropdown'){
+          formValues[item.name] = item.options[0]
+        } else {
+          formValues[item.name] = '';
+        }
       });
     });
 
